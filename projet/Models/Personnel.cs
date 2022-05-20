@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace projet.Models
 {
+    /// <summary>
+    /// Classe métier Responsable
+    /// </summary>
     class Personnel
     {
         public string Nom { get; set; }

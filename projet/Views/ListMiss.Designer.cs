@@ -37,6 +37,7 @@ namespace projet.Views
             this.startDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Motif = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDMOTIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.see = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.absenceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.absenceBindingSource1)).BeginInit();
@@ -47,7 +48,7 @@ namespace projet.Views
             // 
             this.button1.BackColor = System.Drawing.Color.DodgerBlue;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(813, 23);
+            this.button1.Location = new System.Drawing.Point(945, 22);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(142, 36);
             this.button1.TabIndex = 0;
@@ -58,7 +59,6 @@ namespace projet.Views
             // absenceBindingSource
             // 
             this.absenceBindingSource.DataMember = "absence";
-
             // 
             // dataGridView1
             // 
@@ -68,17 +68,20 @@ namespace projet.Views
             this.startDate,
             this.endDate,
             this.Motif,
+            this.IDMOTIF,
             this.see});
             this.dataGridView1.DataSource = this.absenceBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(78, 80);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 80);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(877, 437);
+            this.dataGridView1.Size = new System.Drawing.Size(1075, 536);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // startDate
             // 
+            this.startDate.DataPropertyName = "DATEDEBUT";
             this.startDate.HeaderText = "Date de début";
             this.startDate.MinimumWidth = 6;
             this.startDate.Name = "startDate";
@@ -87,6 +90,7 @@ namespace projet.Views
             // 
             // endDate
             // 
+            this.endDate.DataPropertyName = "DATEFIN";
             this.endDate.HeaderText = "Date de fin";
             this.endDate.MinimumWidth = 6;
             this.endDate.Name = "endDate";
@@ -95,11 +99,22 @@ namespace projet.Views
             // 
             // Motif
             // 
+            this.Motif.DataPropertyName = "LIBELLE";
             this.Motif.HeaderText = "Motif";
             this.Motif.MinimumWidth = 6;
             this.Motif.Name = "Motif";
             this.Motif.ReadOnly = true;
             this.Motif.Width = 125;
+            // 
+            // IDMOTIF
+            // 
+            this.IDMOTIF.DataPropertyName = "IDMOTIF";
+            this.IDMOTIF.HeaderText = "ID du motif";
+            this.IDMOTIF.MinimumWidth = 6;
+            this.IDMOTIF.Name = "IDMOTIF";
+            this.IDMOTIF.ReadOnly = true;
+            this.IDMOTIF.Visible = false;
+            this.IDMOTIF.Width = 125;
             // 
             // see
             // 
@@ -107,17 +122,19 @@ namespace projet.Views
             this.see.MinimumWidth = 6;
             this.see.Name = "see";
             this.see.Text = "Voir absence";
+            this.see.UseColumnTextForButtonValue = true;
             this.see.Width = 125;
             // 
             // ListMiss
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1018, 527);
+            this.ClientSize = new System.Drawing.Size(1099, 628);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Name = "ListMiss";
             this.Text = "Liste des absences";
+            this.Shown += new System.EventHandler(this.ListMiss_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.absenceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.absenceBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -134,6 +151,7 @@ namespace projet.Views
         private System.Windows.Forms.DataGridViewTextBoxColumn startDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn endDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Motif;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDMOTIF;
         private System.Windows.Forms.DataGridViewButtonColumn see;
     }
 }

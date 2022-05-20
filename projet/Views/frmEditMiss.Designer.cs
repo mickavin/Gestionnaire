@@ -82,11 +82,13 @@ namespace projet.Views
             // 
             // comboBox1
             // 
+            this.comboBox1.DisplayMember = "LIBELLE";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(64, 257);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(200, 24);
             this.comboBox1.TabIndex = 5;
+            this.comboBox1.ValueMember = "IDMOTIF";
             // 
             // button1
             // 
@@ -110,6 +112,7 @@ namespace projet.Views
             this.button2.TabIndex = 7;
             this.button2.Text = "Supprimer l\'absence";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // frmEditMiss
             // 
@@ -126,6 +129,7 @@ namespace projet.Views
             this.Controls.Add(this.dateTimePicker1);
             this.Name = "frmEditMiss";
             this.Text = "Modifier une absence";
+            this.Shown += new System.EventHandler(this.frmEditMiss_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -12,6 +12,9 @@ using projet.Controllers;
 
 namespace projet.Views
 {
+    /// <summary>
+    /// Classe liée au formulaire frmEditUser1 le formulaire d'ajout, de modification et de suppression d'un personnel. 
+    /// </summary>
     public partial class frmEditUser1 : Form
     {
         private readonly ListUser _parent;
@@ -23,6 +26,9 @@ namespace projet.Views
             _parent = parent;
         }
 
+        /// <summary>
+        /// Change les informations de la fenêtre frmEditUser1
+        /// </summary>
         public void ChangeLabel()
         {
             this.Text = "Ajouter un utilisateur";
@@ -30,12 +36,18 @@ namespace projet.Views
             button1.Text = "Ajouter l'utilisateur";
         }
 
+        /// <summary>
+        /// Réinitialise les informations du formulaire
+        /// </summary>
         public void Clear()
         {
             txtFirstName.Text = txtMail.Text = txtName.Text = txtTel.Text = string.Empty;
             idService = idPersonnel = 0;
         }
 
+        /// <summary>
+        /// Ferme le formulaire
+        /// </summary>
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -45,7 +57,9 @@ namespace projet.Views
         {
 
         }
-
+        /// <summary>
+        /// Supprime un personnel sous confirmation
+        /// </summary>
         private void button3_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Êtes-vous sûre de vouloir supprimer ce personnel ?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
@@ -56,17 +70,31 @@ namespace projet.Views
             }
         }
 
+        /// <summary>
+        /// Initialise les informations du formulaire
+        /// </summary>
         private void frmEditUser1_Shown(object sender, EventArgs e)
         {
             getList();
             comboBox1.SelectedValue = idService;
         }
 
+        private void frmEditUser1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Récupère et injecte dans un menu déroulant l'ID et le LIBELLE des motifs
+        /// </summary>
         public void getList()
         {
             DBPersonnel.ListeService("SELECT IDSERVICE, NOM FROM service", comboBox1);
         }
 
+        /// <summary>
+        /// Initialise les informations du formulaire
+        /// </summary>
         public void init()
         {
             txtFirstName.Text = firstName;
@@ -75,10 +103,19 @@ namespace projet.Views
             txtTel.Text = tel;
         }
 
+        /// <summary>
+        /// Event du bouton modifier/ ajouter le personnel. Valide les données avant de les injecter dans la base de données 
+        /// </summary>
+        /// <param name=sender> </param>
+        /// <param name=e> </param>
         private void button1_Click(object sender, EventArgs e)
         {
-            idService = (int)comboBox1.SelectedValue;
-            if(txtFirstName.Text.Length < 3)
+            if (comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Un service doit être sélectionné.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txtFirstName.Text.Length < 3)
             {
                 MessageBox.Show("Le prénom doit contenir plus de 3 caractères.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -98,15 +135,24 @@ namespace projet.Views
                 MessageBox.Show("L'adresse mail doit contenir le symbole @.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            idService = (int)comboBox1.SelectedValue;
             if (button1.Text == "Ajouter l'utilisateur")
             {
                 Personnel perso = new Personnel(txtName.Text.Trim(), txtFirstName.Text.Trim(), txtTel.Text.Trim(), txtMail.Text.Trim(), idService);
                 DBPersonnel.AjoutPersonnel(perso);
+                this.Close();
             }
             if (button1.Text == "Modifier l'utilisateur")
             {
-                Personnel perso = new Personnel(txtName.Text.Trim(), txtFirstName.Text.Trim(), txtTel.Text.Trim(), txtMail.Text.Trim(), idService);
-                DBPersonnel.ModifPersonnel(perso, idPersonnel);
+                if (MessageBox.Show("Êtes-vous sûre de vouloir modifier ce personnel ?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    Personnel perso = new Personnel(txtName.Text.Trim(), txtFirstName.Text.Trim(), txtTel.Text.Trim(), txtMail.Text.Trim(), idService);
+                    DBPersonnel.ModifPersonnel(perso, idPersonnel);
+                    this.Close();
+                } else
+                {
+                    return;
+                }
             }
             Clear();
             _parent.getList();

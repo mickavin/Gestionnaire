@@ -184,6 +184,7 @@ namespace projet.Views
             this.Controls.Add(this.txtName);
             this.Name = "frmEditUser1";
             this.Text = "Modifier utilisateur";
+            this.Load += new System.EventHandler(this.frmEditUser1_Load);
             this.Shown += new System.EventHandler(this.frmEditUser1_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -31,8 +31,6 @@ namespace projet.Views
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.absenceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +40,8 @@ namespace projet.Views
             this.IDService = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Actions = new System.Windows.Forms.DataGridViewButtonColumn();
             this.absences = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.absenceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.absenceBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -68,22 +68,6 @@ namespace projet.Views
             this.dataGridView.Size = new System.Drawing.Size(1439, 636);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // absenceBindingSource
-            // 
-            this.absenceBindingSource.DataMember = "absence";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(1242, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 34);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Ajouter utilisateur";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Id
             // 
@@ -169,6 +153,22 @@ namespace projet.Views
             this.absences.UseColumnTextForButtonValue = true;
             this.absences.Width = 125;
             // 
+            // absenceBindingSource
+            // 
+            this.absenceBindingSource.DataMember = "absence";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(1242, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(202, 34);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Ajouter utilisateur";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ListUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -178,7 +178,6 @@ namespace projet.Views
             this.Controls.Add(this.dataGridView);
             this.Name = "ListUser";
             this.Text = "Liste utilisateur";
-            this.Load += new System.EventHandler(this.ListUser_Load);
             this.Shown += new System.EventHandler(this.ListUser_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.absenceBindingSource)).EndInit();

@@ -6,16 +6,21 @@ using System.Threading.Tasks;
 
 namespace projet.Models
 {
+    /// <summary>
+    /// Classe métier Absence
+    /// </summary>
     class Absence
     {
-        public string DateDebut { get; set; }
-        public string Datefin { get; set; }
-        public string Motif { get; set; }
-        public Absence(string debut, string fin, string motif)
+        public DateTime DateDebut { get; set; }
+        public DateTime DateFin { get; set; }
+        public int MotifID { get; set; }
+        public int PersonnelID { get; set; }
+        public Absence(DateTime debut, DateTime fin, int IDMotif, int IDPersonnel)
         {
             DateDebut = debut;
-            Datefin = fin;
-            Motif = motif;
+            DateFin = fin;
+            MotifID = IDMotif;
+            PersonnelID = IDPersonnel;
         }
     }
 }
