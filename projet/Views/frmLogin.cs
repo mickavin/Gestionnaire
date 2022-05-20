@@ -11,7 +11,7 @@ namespace projet.Views
     {
         public frmLogin()
         {
-            
+            InitializeComponent();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -31,7 +31,9 @@ namespace projet.Views
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
-        
+            ListUser page = new ListUser();
+            page.ShowDialog();
+            this.Close();
         }
         public void Login()
         {
@@ -45,6 +47,14 @@ namespace projet.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
+            ListUser page = new ListUser();
+            page.ShowDialog();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

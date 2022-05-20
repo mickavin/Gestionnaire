@@ -10,11 +10,22 @@ using System.Windows.Forms;
 
 namespace projet.Views
 {
-    public partial class Form2 : Form
+    public partial class ListMiss : Form
     {
-        public Form2()
+        public ListMiss()
         {
             InitializeComponent();
+        }
+
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

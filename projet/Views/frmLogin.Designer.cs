@@ -156,6 +156,7 @@ namespace projet.Views
             this.button2.TabIndex = 9;
             this.button2.Text = "Fermer";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // frmLogin
             // 
