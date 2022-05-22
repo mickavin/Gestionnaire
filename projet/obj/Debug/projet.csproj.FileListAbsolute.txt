@@ -31,3 +31,4 @@ C:\Users\Admin\Documents\projets\projet\projet\obj\Debug\projet.exe
 C:\Users\Admin\Documents\projets\projet\projet\obj\Debug\projet.pdb
 C:\Users\Admin\Documents\projets\projet\projet\obj\Debug\projet.Views.ListUser.resources
 C:\Users\Admin\Documents\projets\projet\projet\obj\Debug\projet.Views.frmEditUser1.resources
+C:\Users\Admin\Documents\projets\projet\projet\bin\Debug\projet.xml

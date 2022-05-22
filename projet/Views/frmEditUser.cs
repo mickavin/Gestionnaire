@@ -130,6 +130,11 @@ namespace projet.Views
                 MessageBox.Show("L'adresse mail doit contenir plus de 3 caractères.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (txtTel.Text.Length < 3)
+            {
+                MessageBox.Show("Le numéro de téléphone doit contenir plus de 3 caractères.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (!txtMail.Text.Contains("@"))
             {
                 MessageBox.Show("L'adresse mail doit contenir le symbole @.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -1,0 +1,327 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>projet</name>
+    </assembly>
+    <members>
+        <member name="T:projet.Controllers.DBResponsable">
+            <summary>
+             Classe de connexion à la base de données pour la table Responsable
+            </summary>
+        </member>
+        <member name="M:projet.Controllers.DBResponsable.GetConnection">
+            <summary>
+            Méthode qui initialise la connexion à la base de données
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:projet.Controllers.DBResponsable.AjoutResponsable(projet.Models.Responsable)" -->
+        <!-- Badly formed XML comment ignored for member "M:projet.Controllers.DBResponsable.GetResponsable(projet.Models.Responsable)" -->
+        <member name="T:projet.Controllers.DBPersonnel">
+            <summary>
+             Classe de connexion à la base de données pour la table Personnel et service lié au personnel
+            </summary>
+        </member>
+        <member name="M:projet.Controllers.DBPersonnel.GetConnection">
+            <summary>
+            Méthode qui initialise la connexion à la base de données
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:projet.Controllers.DBPersonnel.AjoutPersonnel(projet.Models.Personnel)" -->
+        <!-- Badly formed XML comment ignored for member "M:projet.Controllers.DBPersonnel.ModifPersonnel(projet.Models.Personnel,System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:projet.Controllers.DBPersonnel.SupprimerPersonnel(System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:projet.Controllers.DBPersonnel.ListePersonnel(System.String,System.Windows.Forms.DataGridView)" -->
+        <!-- Badly formed XML comment ignored for member "M:projet.Controllers.DBPersonnel.ListeService(System.String,System.Windows.Forms.ComboBox)" -->
+        <member name="T:projet.Controllers.DBAbsence">
+            <summary>
+             Classe de connexion à la base de données pour la table Absence et motif d'absences
+            </summary>
+        </member>
+        <member name="M:projet.Controllers.DBAbsence.GetConnection">
+            <summary>
+            Méthode qui initialise la connexion à la base de données
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:projet.Controllers.DBAbsence.AjoutAbsence(projet.Models.Absence)" -->
+        <!-- Badly formed XML comment ignored for member "M:projet.Controllers.DBAbsence.ModifAbsence(projet.Models.Absence,System.Int32,System.DateTime)" -->
+        <!-- Badly formed XML comment ignored for member "M:projet.Controllers.DBAbsence.SupprimerAbsence(System.Int32,System.DateTime)" -->
+        <!-- Badly formed XML comment ignored for member "M:projet.Controllers.DBAbsence.ListeAbsence(System.String,System.Windows.Forms.DataGridView)" -->
+        <!-- Badly formed XML comment ignored for member "M:projet.Controllers.DBAbsence.ListeMotif(System.String,System.Windows.Forms.ComboBox)" -->
+        <member name="F:projet.Form1.components">
+            <summary>
+            Variable nécessaire au concepteur.
+            </summary>
+        </member>
+        <member name="M:projet.Form1.Dispose(System.Boolean)">
+            <summary>
+            Nettoyage des ressources utilisées.
+            </summary>
+            <param name="disposing">true si les ressources managées doivent être supprimées ; sinon, false.</param>
+        </member>
+        <member name="M:projet.Form1.InitializeComponent">
+            <summary>
+            Méthode requise pour la prise en charge du concepteur - ne modifiez pas
+            le contenu de cette méthode avec l'éditeur de code.
+            </summary>
+        </member>
+        <member name="T:projet.Models.Absence">
+            <summary>
+            Classe métier Absence
+            </summary>
+        </member>
+        <member name="T:projet.Models.Personnel">
+            <summary>
+            Classe métier Responsable
+            </summary>
+        </member>
+        <member name="T:projet.Models.Responsable">
+            <summary>
+            Classe métier Responsable
+            </summary>
+        </member>
+        <member name="M:projet.Models.Responsable.CalculateSHA256(System.String)">
+            <summary>
+            Méthode qui encrypte le mot de passe de l'utilisateur
+            </summary>
+        </member>
+        <member name="M:projet.Program.Main">
+            <summary>
+            Point d'entrée principal de l'application.
+            </summary>
+        </member>
+        <member name="T:projet.Views.ListMiss">
+            <summary>
+            Classe liée à la fenêtre ListMiss, la fenêtre d'affichage des absences d'un personnel. 
+            </summary>
+        </member>
+        <member name="M:projet.Views.ListMiss.button1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Ouvre le formulaire frmEditMiss pour ajouter une absence
+            </summary>
+        </member>
+        <member name="M:projet.Views.ListMiss.getList">
+            <summary>
+            Initialise la liste des absences
+            </summary>
+        </member>
+        <member name="M:projet.Views.ListMiss.ListMiss_Shown(System.Object,System.EventArgs)">
+            <summary>
+            Event qui initialise la liste des absences
+            </summary>
+        </member>
+        <member name="M:projet.Views.ListMiss.dataGridView1_CellContentClick_1(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+            <summary>
+            Initialise et ouvre la fenêtre frmEditMiss pour la modification ou la suppression d'une absence sélectionnée.
+            </summary>
+        </member>
+        <member name="F:projet.Views.ListMiss.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:projet.Views.ListMiss.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:projet.Views.ListMiss.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:projet.Views.frmEditMiss">
+            <summary>
+            Classe liée au formulaire frmEditMiss le formulaire d'ajout, de modification et de suppression d'une absence. 
+            </summary>
+        </member>
+        <member name="M:projet.Views.frmEditMiss.init">
+            <summary>
+            Initialise les dates du formulaire
+            </summary>
+        </member>
+        <member name="M:projet.Views.frmEditMiss.button2_Click(System.Object,System.EventArgs)">
+            <summary>
+            Supprime une absence sous confirmation
+            </summary>
+        </member>
+        <member name="M:projet.Views.frmEditMiss.frmEditMiss_Shown(System.Object,System.EventArgs)">
+            <summary>
+            Initialise les informations du formulaire
+            </summary>
+        </member>
+        <member name="M:projet.Views.frmEditMiss.getList">
+            <summary>
+            Récupère et injecte dans un menu déroulant l'ID et le LIBELLE des motifs
+            </summary>
+        </member>
+        <member name="M:projet.Views.frmEditMiss.ChangeLabel">
+            <summary>
+            Change les informations de la fenêtre frmEditMiss
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:projet.Views.frmEditMiss.button1_Click(System.Object,System.EventArgs)" -->
+        <member name="F:projet.Views.frmEditMiss.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:projet.Views.frmEditMiss.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:projet.Views.frmEditMiss.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:projet.Views.ListUser">
+            <summary>
+            Classe liée à la fenêtre ListUser, la fenêtre d'affichage des personnels. 
+            </summary>
+        </member>
+        <member name="M:projet.Views.ListUser.dataGridView1_CellContentClick(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+            <summary>
+            Initialise et ouvre la fenêtre frmEditUser pour la modification ou la suppression d'un personnel sélectioné ou ouvre la fenêtre ListMiss pour voir la liste des absences d'un personnel sélectionné.
+            </summary>
+        </member>
+        <member name="M:projet.Views.ListUser.getList">
+            <summary>
+            Initialise la liste des personnels
+            </summary>
+        </member>
+        <member name="M:projet.Views.ListUser.button1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Ouvre le formulaire frmEditUser1 pour ajouter un personnel
+            </summary>
+        </member>
+        <member name="M:projet.Views.ListUser.ListUser_Shown(System.Object,System.EventArgs)">
+            <summary>
+            Event qui initialise la liste des personnels
+            </summary>
+        </member>
+        <member name="F:projet.Views.ListUser.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:projet.Views.ListUser.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:projet.Views.ListUser.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:projet.Views.frmEditUser1">
+            <summary>
+            Classe liée au formulaire frmEditUser1 le formulaire d'ajout, de modification et de suppression d'un personnel. 
+            </summary>
+        </member>
+        <member name="M:projet.Views.frmEditUser1.ChangeLabel">
+            <summary>
+            Change les informations de la fenêtre frmEditUser1
+            </summary>
+        </member>
+        <member name="M:projet.Views.frmEditUser1.Clear">
+            <summary>
+            Réinitialise les informations du formulaire
+            </summary>
+        </member>
+        <member name="M:projet.Views.frmEditUser1.button2_Click(System.Object,System.EventArgs)">
+            <summary>
+            Ferme le formulaire
+            </summary>
+        </member>
+        <member name="M:projet.Views.frmEditUser1.button3_Click(System.Object,System.EventArgs)">
+            <summary>
+            Supprime un personnel sous confirmation
+            </summary>
+        </member>
+        <member name="M:projet.Views.frmEditUser1.frmEditUser1_Shown(System.Object,System.EventArgs)">
+            <summary>
+            Initialise les informations du formulaire
+            </summary>
+        </member>
+        <member name="M:projet.Views.frmEditUser1.getList">
+            <summary>
+            Récupère et injecte dans un menu déroulant l'ID et le LIBELLE des motifs
+            </summary>
+        </member>
+        <member name="M:projet.Views.frmEditUser1.init">
+            <summary>
+            Initialise les informations du formulaire
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:projet.Views.frmEditUser1.button1_Click(System.Object,System.EventArgs)" -->
+        <member name="F:projet.Views.frmEditUser1.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:projet.Views.frmEditUser1.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:projet.Views.frmEditUser1.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:projet.Views.frmLogin">
+            <summary>
+            Classe liée au formulaire frmLogin le formulaire d'ajout et d'authentification d'un responsable. 
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:projet.Views.frmLogin.btnlogin_Click(System.Object,System.EventArgs)" -->
+        <member name="M:projet.Views.frmLogin.button2_Click(System.Object,System.EventArgs)">
+            <summary>
+            Ferme le formulaire
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:projet.Views.frmLogin.linkregister_LinkClicked(System.Object,System.Windows.Forms.LinkLabelLinkClickedEventArgs)" -->
+        <member name="F:projet.Views.frmLogin.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:projet.Views.frmLogin.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:projet.Views.frmLogin.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:projet.Properties.Resources">
+            <summary>
+              Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+            </summary>
+        </member>
+        <member name="P:projet.Properties.Resources.ResourceManager">
+            <summary>
+              Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+            </summary>
+        </member>
+        <member name="P:projet.Properties.Resources.Culture">
+            <summary>
+              Remplace la propriété CurrentUICulture du thread actuel pour toutes
+              les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+            </summary>
+        </member>
+    </members>
+</doc>
