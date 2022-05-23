@@ -12,5 +12,5 @@ Il m'a a été confié le développement de l'application de bureau qui va perme
 </h1>
 
 Lien vers mon portfolio sur lequel je présente le projet : <a href="https://kevinjeanphilippe.com/">https://kevinjeanphilippe.com/</a><br/>
-Lien vers la base de données du projet : <a href="https://github.com/mickavin/Gestionnaire/tree/main/sql">https://github.com/mickavin/Gestionnaire/tree/main/sql</a><br/>
+Lien vers la base de données du projet : <a href="https://github.com/mickavin/Gestionnaire/blob/main/sql/BDD.SQL">https://github.com/mickavin/Gestionnaire/blob/main/sql/BDD.SQL</a><br/>
 Lien vers la documentation :<a href="https://github.com/mickavin/Gestionnaire/tree/main/documentation">https://github.com/mickavin/Gestionnaire/tree/main/documentation</a><br/>
